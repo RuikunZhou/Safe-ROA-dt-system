@@ -34,11 +34,10 @@ export CONFIG_PATH=$(pwd)
 cd complete_verifier
 
 # Run the following for each of the systems
-python abcrown.py --config $CONFIG_PATH/path_tracking_state_feedback_lyapunov_in_levelset.yaml
-python abcrown.py --config $CONFIG_PATH/pendulum_state_feedback_lyapunov_in_levelset.yaml
-python abcrown.py --config $CONFIG_PATH/pendulum_output_feedback_lyapunov_in_levelset.yaml
-python abcrown.py --config $CONFIG_PATH/quadrotor2d_state_feedback_lyapunov_in_levelset.yaml
-python abcrown.py --config $CONFIG_PATH/quadrotor2d_output_feedback_lyapunov_in_levelset.yaml
+python abcrown.py --config $CONFIG_PATH/van_der_pol.yaml
+python abcrown.py --config $CONFIG_PATH/two_machine.yaml
+python abcrown.py --config $CONFIG_PATH/power.yaml
+
 ```
 
 The verification will output a summary of results. For example, here are the
