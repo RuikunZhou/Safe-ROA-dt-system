@@ -40,8 +40,7 @@ python abcrown.py --config $CONFIG_PATH/power.yaml
 
 ```
 
-The verification will output a summary of results. For example, here are the
-results we obtained on Pendulum Output Feedback using `pendulum_output_feedback_lyapunov_in_levelset.yaml`:
+The verification will output a summary of results. For example:
 ```
 ############# Summary #############
 Final verified acc: 100.0% (total 8 examples)
@@ -52,9 +51,3 @@ safe (total 8), index: [0, 1, 2, 3, 4, 5, 6, 7]
 ```
 It shows that the 8 examples (sub-regions for verification) are all verified
 and no example is falsified or timeout. Therefore, the verification fully succeeded.
-
-Our verification configurations have been tested on a GPU with 48GB memory.
-If you are using a GPU with less memory, you may decrease the batch size
-of verification by modifying the `batch_size` item in the configuration files
-or passing an argument `--batch_size BATCH_SIZE`,
-until it fits into the GPU memory.
