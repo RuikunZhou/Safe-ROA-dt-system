@@ -1,0 +1,60 @@
+; VNNLIB Property for verification
+
+; Generated at Sun Mar 16 22:46:07 2025 on hybrid by r54zhou
+; Generation command: zubov_dt_generate_vnnlib.py zubov_spec/power -l -3.5 -3.5 -3.5 -3.5 -u 3.5 3.5 3.5 3.5 -y 2l15.972955967429023 4l0 -s 9 -n 0
+
+; Input variables (states).
+(declare-const X_0 Real)
+(declare-const X_1 Real)
+(declare-const X_2 Real)
+(declare-const X_3 Real)
+
+(declare-const Y_0 Real)
+(declare-const Y_1 Real)
+(declare-const Y_2 Real)
+(declare-const Y_3 Real)
+(declare-const Y_4 Real)
+(declare-const Y_5 Real)
+(declare-const Y_6 Real)
+(declare-const Y_7 Real)
+(declare-const Y_8 Real)
+
+; Input constraints.
+
+; Input state 0.
+(assert (<= X_0 3.5))
+(assert (>= X_0 -3.5))
+
+; Input state 1.
+(assert (<= X_1 3.5))
+(assert (>= X_1 -3.5))
+
+; Input state 2.
+(assert (<= X_2 3.5))
+(assert (>= X_2 -3.5))
+
+; Input state 3.
+(assert (<= X_3 3.5))
+(assert (>= X_3 -3.5))
+
+; Output constraints.
+
+
+; Assert the premise: c1 <= Y_1 <= c2
+(assert (>= Y_1 0.009765625))
+(assert (<= Y_1 0.1))
+
+; Assert the negation of the conclusion:
+; Y_0 >= 0  OR Y_5 6 7 8 < -limit OR Y_5 6 7 8 > -limit 
+(assert (or
+  (and (>= Y_0 0))
+  (and (<= Y_5 -3.5))
+  (and (>= Y_5 3.5))
+  (and (<= Y_6 -3.5))
+  (and (>= Y_6 3.5))
+  (and (<= Y_7 -3.5))
+  (and (>= Y_7 3.5))
+  (and (<= Y_8 -3.5))
+  (and (>= Y_8 3.5))
+))
+

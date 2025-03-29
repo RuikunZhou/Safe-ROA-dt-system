@@ -1,0 +1,32 @@
+; VNNLIB Property for verification
+
+; Generated at Sun Mar 16 19:19:14 2025 on hybrid by r54zhou
+; Generation command: zubov_dt_generate_vnnlib.py zubov_spec/two_machine -l -1 -1.5 -u 1.5 1 -y 1l0.126953125 3g0.8591392713297208 -s 8 -n 2
+
+; Input variables (states).
+(declare-const X_0 Real)
+(declare-const X_1 Real)
+
+(declare-const Y_0 Real)
+(declare-const Y_1 Real)
+(declare-const Y_2 Real)
+(declare-const Y_3 Real)
+(declare-const Y_4 Real)
+(declare-const Y_5 Real)
+(declare-const Y_6 Real)
+(declare-const Y_7 Real)
+
+; Input constraints.
+
+; Input state 0.
+(assert (<= X_0 1.5))
+(assert (>= X_0 -1.0))
+
+; Input state 1.
+(assert (<= X_1 1.0))
+(assert (>= X_1 -1.5))
+
+; Output constraints.
+
+(assert (<= Y_1 0.126953125))
+(assert (>= Y_3 0.8591392713297208))

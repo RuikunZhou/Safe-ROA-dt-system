@@ -1,0 +1,41 @@
+; VNNLIB Property for finding a counterexample to Lyapunov conditions.
+
+; Input variables (states).
+(declare-const X_0 Real)
+(declare-const X_1 Real)
+
+; Output variables:
+(declare-const Y_0 Real)
+(declare-const Y_1 Real)
+(declare-const Y_2 Real)
+(declare-const Y_3 Real)
+(declare-const Y_4 Real)
+(declare-const Y_5 Real)
+(declare-const Y_6 Real)
+(declare-const Y_7 Real)
+
+
+; Input constraints.
+
+; Input state 0.
+(assert (<= X_0 2.5))
+(assert (>= X_0 -2.5))
+
+; Input state 1.
+(assert (<= X_1 3.5))
+(assert (>= X_1 -3.5))
+
+; Assert the premise: c1 <= Y_1 <= c2
+(assert (>= Y_1 0.2265625))
+(assert (<= Y_1 0.732421875))
+
+; Assert the negation of the conclusion:
+; Y_0 >= 0 OR Y_2 >= 1 OR Y_6 < -limit OR Y_6 > limit OR Y_7 < -limit OR Y_7 > limit
+(assert (or
+  (and (>= Y_0 0))
+  (and (>= Y_2 1))
+  (and (<= Y_6 -2.5))
+  (and (>= Y_6 2.5))
+  (and (<= Y_7 -3.5))
+  (and (>= Y_7 3.5))
+))
