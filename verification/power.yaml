@@ -1,0 +1,35 @@
+general:
+  conv_mode: matrix # for CNN
+  enable_incomplete_verification: false 
+  root_path: ${CONFIG_PATH}
+  csv_name: zubov_spec/power.csv
+model:
+  name: >-
+    Customized("../crown_verification/models.py", "create_power")
+  path: ${CONFIG_PATH}/../models/power.pth
+  input_shape: [-1, 4]
+attack:
+  pgd_order: before 
+  pgd_restarts: 100000 
+  pgd_steps: 1000 
+  pgd_alpha: 0.001 
+  pgd_alpha_scale: True 
+solver:
+  batch_size: 50000 
+  min_batch_size_ratio: 0. 
+  bound_prop_method: crown 
+bab:
+  override_timeout: 100000000 
+  decision_thresh: -1.e-6  
+  branching:
+    method: sb  
+    input_split:
+      enable: True
+      ibp_enhancement: True 
+      compare_with_old_bounds: True 
+      adv_check: 0 
+      sb_coeff_thresh: 0.1  
+      enable_clip_domains: True 
+      reorder_bab: True 
+      # show_progress: True 
+
