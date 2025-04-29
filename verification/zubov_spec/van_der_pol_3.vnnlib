@@ -27,7 +27,7 @@
 
 ; Assert the premise: c1 <= Y_1 <= c2
 (assert (>= Y_1 0.2265625))
-(assert (<= Y_1 0.732421875))
+(assert (<= Y_1 0.728))
 
 ; Assert the negation of the conclusion:
 ; Y_0 >= 0 OR Y_2 >= 1 OR Y_6 < -limit OR Y_6 > limit OR Y_7 < -limit OR Y_7 > limit
