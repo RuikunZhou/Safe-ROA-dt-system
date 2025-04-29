@@ -40,7 +40,7 @@
 ; Output constraints.
 
 
-; Assert the premise: c1 <= Y_1 <= c2  0.604248046875
+; Assert the premise: c1 <= Y_1 <= c2
 (assert (>= Y_1 0.05))
 (assert (<= Y_1 0.6042))
 
