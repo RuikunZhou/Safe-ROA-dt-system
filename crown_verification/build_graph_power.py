@@ -85,6 +85,7 @@ class quad_norm(nn.Module):
         # return (self.r * self.r - quad_term).unsqueeze(-1)
 
         quad_term = 2 * torch.sqrt(ATPDh_norm_sq) + self.P_norm * Dh_norm_sq
+        # print(quad_term.shape)
         return (self.r - quad_term).unsqueeze(-1)
         
     
@@ -181,4 +182,4 @@ class loss_nn(nn.Module):
         V_qx = self.q(x)
         V_qfx = self.q(new_x)
         quad_norm = self.quad_norm(x)
-        return torch.cat((V_fx - V_x, V_x, V_qx, V_qfx - V_qx, quad_norm, new_x[:, 0:1], new_x[:, 1:2], new_x[:, 2:3], new_x[:, 3:4]),dim=1)
+        return torch.cat((V_fx - V_x, V_x, V_qx, V_qfx - V_qx, quad_norm, new_x[:, 0:1], new_x[:, 1:2], new_x[:, 2:3], new_x[:, 3:4], V_fx),dim=1)

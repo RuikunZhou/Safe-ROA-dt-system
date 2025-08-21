@@ -169,4 +169,4 @@ class loss_nn(nn.Module):
         V_qx = self.q(x)
         V_qfx = self.q(new_x)
         quad_norm = self.quad_norm(x)
-        return torch.cat((V_fx - V_x, V_x, h_x, V_qx, V_qfx - V_qx, quad_norm, new_x[:, 0:1], new_x[:, 1:2],),dim=1)
+        return torch.cat((V_fx - V_x, V_x, h_x, V_qx, V_qfx - V_qx, quad_norm, new_x[:, 0:1], new_x[:, 1:2], V_fx),dim=1)
