@@ -13,6 +13,7 @@
 (declare-const Y_5 Real)
 (declare-const Y_6 Real)
 (declare-const Y_7 Real)
+(declare-const Y_8 Real)
 
 
 ; Input constraints.
